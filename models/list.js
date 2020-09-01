@@ -6,7 +6,7 @@ const requestSchema = new Schema({
   Coins:[coinSchema]
 });
 const listSchema=new Schema({
-    Author_ID:{type:String},
+    Author_ID:String,
     List_title:{type:String,default:'My Coins'},
     Coins:{type:Array,default:['']},
     Requests:[requestSchema]
