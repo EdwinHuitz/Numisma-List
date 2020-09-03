@@ -3,7 +3,7 @@ var usersCtrl = require('../controllers/users');
 
 // GET /users
 //new list
-router.get('/new',isLoggedIn,usersCtrl.new)
+router.get('/new',usersCtrl.new)
 //new entry
 router.post('/create',isLoggedIn,usersCtrl.create)
 //user profile
