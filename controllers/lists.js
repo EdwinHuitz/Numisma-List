@@ -10,8 +10,10 @@ function newList(res,req)
   User.findById(req.params.id,function(err,usr)
   {
     req.body.Author_ID=usr._id;
-    List.create(req.body)
-    .then(res.render(`users/${usr._id}`, {user:usr,title:usr.name}))
+    const list=new List(req.body);
+    list.save(function(err){
+        if(err)return res.render(`users/${usr._id}`, {user:usr,title:usr.name}
+    )})
   })
 }
-function createList(res,req){let user=req.params.id;res.render(`users/${user._id}/lists`,{title:'Add a New Flight'})}
+function createList(res,req){let user=req.params.id;res.render(`users/${user}/lists`,{title:'Add a New Flight'})}
