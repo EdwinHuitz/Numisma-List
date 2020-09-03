@@ -10,7 +10,7 @@ function index(req, res)
   User.findById(req.params.id,
     function(err,usr){
       List.find({usr:usr._id},function(err,lists){
-        res.render(`users/show`, { user:usr, lists, title:'Users'})
+        res.render(`users/profile`, { user:usr, lists, title:usr.name})
       })
     })
 }

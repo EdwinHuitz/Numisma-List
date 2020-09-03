@@ -2,10 +2,14 @@ var router = require('express').Router();
 var usersCtrl = require('../controllers/users');
 
 // GET /users
+//new list
 router.get('/new',isLoggedIn,usersCtrl.new)
-router.post('/',isLoggedIn,usersCtrl.create)
+//new entry
+router.post('/create',isLoggedIn,usersCtrl.create)
+//user profile
 router.get('/:id',usersCtrl.index);
-router.get('/',usersCtrl.list)
+//user profile lists
+router.get('/:id/list',usersCtrl.list)
 
 
 function isLoggedIn(req,res,next)
