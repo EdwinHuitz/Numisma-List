@@ -7,9 +7,9 @@ const requestSchema = new Schema({
 });
 const listSchema=new Schema({
     Author_ID:{type:Schema.Types.ObjectId,ref:'User'},
-    List_title:{type:String,default:'My Coins'},
-    Coin_type:{type:String,default:'Token'},
-    Coin_category:{type:String,default:'World Coins'},
+    listTitle:{type:String,default:'My Coins'},
+    coinType:{type:String,default:'Token'},
+    coinCategory:{type:String,default:'World Coins'},
     Coins:{type:Array,default:['']},
     Requests:[requestSchema]
 })

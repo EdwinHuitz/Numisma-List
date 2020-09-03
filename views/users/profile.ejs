@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><%- title %></title>
+    <title><%= title %></title>
     <link rel="stylesheet" href="../stylesheets/style.css" />
 </head>
 <%- include("../partials/header") %>
 
 
-<h1><%-title%></h1>
-<% if(user){ %><button href="#" onclick="let list = document.getElementById('newlist').style;if(list.visibility==='visible'){list.visibility='hidden'}else{list.visibility='visible'}">New List</button>
-<button href="#" onclick="let list = document.getElementById('mylist').style;if(list.visibility==='visible'){list.visibility='hidden'}else{list.visibility='visible'}">My Lists</button>
-<div id="newlist"style="visibility:hidden;"><%- include("../partials/list") %></div><%}%>
+<h1><%=title%></h1>
+<% if(user){ %><button href="#"
+    onclick="let list = document.getElementById('newlist').style;if(list.visibility==='visible'){list.visibility='hidden'}else{list.visibility='visible'}">New
+    List</button>
+<button href="#"
+    onclick="let list = document.getElementById('mylist').style;if(list.visibility==='visible'){list.visibility='hidden'}else{list.visibility='visible'}">My
+    Lists</button>
+<div id="newlist" style="visibility:hidden;">
+    <form action="/users/<%=user._id%>/lists" method="POST">
+        <label>Coin Type:
+            <select name="coinType">
+                <option value="Coin">Coin</option>
+                <option value="Medal">Medal</option>
+                <option value="Token" selected>Token</option>
+                <option value="Round">Round</option>
+                <option value="Other">Other</option>
+            </select>
+        </label><br>
+        <label>Collection Category:
+            <select name="coinCategory">
+                <option value="USA" selected>USA</option>
+                <option value="World Coins">World</option>
+                <option value="Ancient Coins">Ancient</option>
+                <option value="Mixed">Mixed</option>
+                <option value="Other">Other</option>
+            </select>
+        </label><br>
+        <label>Collection Title:
+            <input type="text" required pattern="[A-Za-z0-9\s]{1,}" name="listTitle">
+        </label><br>
+        <button type="submit" id="sub">Submit</button>
+    </form>
+</div><%}%>
 
 
 <%- include("../partials/footer")%>
