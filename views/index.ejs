@@ -12,9 +12,7 @@
 <!-- Logged In -->
 <% if(user){ %>
     <h1>Welcome <%= user.name %>!</h1>
-    <label for="new_list">asdf: </label><a href="users/<%=user._id%>" id="new_list"><%=user.name%></a><br>
-    <button>b</button><br>
-    <button>c</button>
+    <label for="new_list">My Profile: </label><a href="users/<%=user._id%>" id="new_list"><%=user.name%></a><br>
     
 <!-- Not Logged In -->
 <% }else{ %>

@@ -1,11 +1,10 @@
 var router = require('express').Router();
 var listsCtrl = require('../controllers/lists');
 
+//new list
+router.post('users/:id/lists',listsCtrl.new)
 //list page
 router.get('users/:id/lists',listsCtrl.create)
-//new list
-router.post('users/:id/lists',isLoggedIn,listsCtrl.new)
-
 
 function isLoggedIn(req,res,next)
 {
