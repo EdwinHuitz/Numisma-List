@@ -20,6 +20,7 @@ require('./config/passport');
 // require our routes
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
+const usersRouter = require('./routes/users');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -41,7 +42,8 @@ app.use(passport.session());
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
-app.use('/auth', authRouter)
+app.use('/auth', authRouter);
+app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

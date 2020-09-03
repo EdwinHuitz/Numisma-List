@@ -12,4 +12,4 @@ const coinSchema=new Schema({
     Coin_composition:{type:Array,default:'Unknown'},
     Coin_grade:{type:String,default:'Ungraded'}
 })
-module.exports=mongoose.model('Coins', coinSchema);
+module.exports=mongoose.model('Coin', coinSchema);

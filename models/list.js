@@ -3,7 +3,7 @@ const Schema=mongoose.Schema;
 
 const requestSchema = new Schema({
   User_ID:String,
-  Coins:[coinSchema]
+  Coins:Array
 });
 const listSchema=new Schema({
     Author_ID:String,
@@ -11,4 +11,4 @@ const listSchema=new Schema({
     Coins:{type:Array,default:['']},
     Requests:[requestSchema]
 })
-module.exports = mongoose.model('Lists', listSchema);
+module.exports = mongoose.model('List', listSchema);
