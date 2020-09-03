@@ -6,12 +6,12 @@ module.exports = {
 };
 function newList(res,req)
 {
-  console.log('a');
+  console.log('abc 123!!!');
   User.findById(req.params.id,function(err,usr)
   {
     req.body.Author_ID=usr._id;
     List.create(req.body)
-    .then(res.redirect(`users/${usr._id}`, {user:usr,title:usr.name}))
+    .then(res.render(`users/${usr._id}`, {user:usr,title:usr.name}))
   })
 }
-function createList(res,req){}
+function createList(res,req){let user=req.params.id;res.render(`users/${user._id}/lists`,{title:'Add a New Flight'})}

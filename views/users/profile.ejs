@@ -8,6 +8,6 @@
     <link rel="stylesheet" href="../stylesheets/style.css" />
 </head>
 <%- include("../partials/header") %>
-<button href="#" onclick="let list = document.getElementById('newlist').style;if(list.visibility==='visible'){list.visibility='hidden'}else{list.visibility='visible'}">New List</button>
-<div id="newlist"style="visibility:hidden;"><%- include("../partials/list")%></div>
+<% if(user){ %><button href="#" onclick="let list = document.getElementById('newlist').style;if(list.visibility==='visible'){list.visibility='hidden'}else{list.visibility='visible'}">New List</button>
+<div id="newlist"style="visibility:hidden;"><%- include("../partials/list") %></div><%}%>
 <%- include("../partials/footer")%>
