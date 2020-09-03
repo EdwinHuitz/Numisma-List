@@ -16,4 +16,4 @@ function newList(res,req)
     )})
   })
 }
-function createList(res,req){let user=req.params.id;res.render(`users/${user}/lists`,{title:'Add a New Flight'})}
+function createList(res,req){let user=req.params.id;res.render(`users/${user}/lists`,{user:req.user?req.user:null,title:'Add a New Flight'})}
