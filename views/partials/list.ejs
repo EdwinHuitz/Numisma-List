@@ -1,20 +1,24 @@
-<form action="/flights" method="POST">
-    <label>Airline:
-    <select name="airline">
-        <option value="American">American</option>
-        <option value="Southwest">Southwest</option>
-        <option value="United">United</option>
-        <option value="NA">N/A</option>
+<form action="<%-user._id%>/lists" method="POST">
+    <label>Coin Type:
+    <select name="Coin_type">
+        <option value="Coin">Coin</option>
+        <option value="Medal">Medal</option>
+        <option value="Token" selected>Token</option>
+        <option value="Round">Round</option>
+        <option value="Other">Other</option>
         </select>
     </label><br>
-    <label>Airport:
-        <select name="airport">
-        <option value="AUS">AUS</option>
-        <option value="DFW">DFW</option>
-        <option value="DEN" selected>DEN</option>
-        <option value="LAX">LAX</option>
-        <option value="SAN">SAN</option>
+    <label>Collection Category:
+        <select name="Coin_category">
+        <option value="USA" selected>USA</option>
+        <option value="World Coins">World</option>
+        <option value="Ancient Coins">Ancient</option>
+        <option value="Mixed">Mixed</option>
+        <option value="Other">Other</option>
         </select>
 </label><br>
-    <button type="submit" value="Create List" id="sub">Submit</button>
+<label>Collection Title:
+    <input type="text" required pattern="[A-Za-z0-9\s]{1,}" name="List_title">
+</label><br>
+    <button type="submit" id="sub">Submit</button>
 </form>

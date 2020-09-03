@@ -2,7 +2,7 @@ const User = require('../models/user');
 const List = require('../models/list')
 
 module.exports = {
-  index,new:newList,create:createEntry,list:createList
+  index,create:createEntry
 };
 
 function index(req, res)
@@ -14,9 +14,5 @@ function index(req, res)
       })
     })
 }
-function newList(res,req)
-{
-  User.findById(req.params.id,function(err,usr){res.redirect('users/profile', {user:usr._id,title:'New List'})})
-}
-function createList(res,req){}
+
 function createEntry(res,req){}
