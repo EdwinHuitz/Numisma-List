@@ -3,14 +3,12 @@
     <nav>
       <div class="nav-wrapper">
         <a href="" class="brand-logo left">Numisma-List</a>
-        <ul class="right">
-          <li>
           <% if (user) { %>
+            <a href="/users">My Profile</a>
             <a href="/auth/logout">Log Out</a>
           <% } else { %>
-            <a href="/auth/google">Log In using Google</a>
+            <a href="/auth/google" class="nav-right">Log In using Google</a>
           <% } %>
-          </li>
         </ul>
       </div>
     </nav>

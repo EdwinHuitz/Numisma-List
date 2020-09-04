@@ -1,12 +1,18 @@
-.brand-logo {
-  margin-left: 15px;
+body{
+  text-align:center;
 }
-
-.card .card-content .card-title {
-  margin-bottom: 10px;
+.navbar-fixed{
+width:100vw;
+}
+.nav-wrapper{
+  display:flex;
+  flex-flow: row;
+  justify-content: space-between;
+  width:100vw;
 }
 
 #search-row form {
   padding-top: 20px;
+  display:flex;
+  flex-direction: row;
 }
-

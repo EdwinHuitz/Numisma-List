@@ -5,7 +5,8 @@ module.exports = {
     new: newCoin,
     req: requestCoin,
     create: createCoin,
-    del: deleteCoin
+    del: deleteCoin,
+    edit: editCoin
 };
 
 function newCoin(req, res) {
@@ -62,5 +63,25 @@ function deleteCoin(req, res) {
         if(err){console.log(err)}
         res.redirect('/users')
         console.log('done')
+    })
+}
+function editCoin(req,res)
+{
+    console.log('Starting:' + req.body)
+    Coin.findById(req.params.id, function (err, coin) {
+        if (err) {
+            console.log(err)
+        }
+        req.body.authorId=coin.authorId;
+        Coin.findByIdAndDelete(req.params.id,(err,a)=>{
+            if(err){console.log(err)}
+            req.body._id = req.params.id;
+            let newCoin=new Coin(req.body)
+                newCoin.save(function(err){
+                if(err){console.log(err)}
+                console.log(req.body)
+                res.redirect(`/coins/${req.params.id}`)
+            })
+        });
     })
 }
