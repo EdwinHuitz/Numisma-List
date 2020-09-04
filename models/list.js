@@ -10,7 +10,7 @@ const listSchema=new Schema({
     listTitle:{type:String,default:'My Coins'},
     coinType:{type:String,default:'Token'},
     coinCategory:{type:String,default:'World Coins'},
-    coins:{type:Array,default:['']},
+    coins:Array,
     requests:[requestSchema]
 })
 module.exports = mongoose.model('List', listSchema);

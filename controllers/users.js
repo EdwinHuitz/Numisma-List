@@ -11,7 +11,7 @@ function index(req, res)
     function(err,usr){
       
       List.find({authorId:usr},function(err,lists){
-        console.log(lists)
+        //console.log(lists)
         res.render('users/profile', { user:req.user?req.user:null, lists, title:req.user.name})
       })
     })

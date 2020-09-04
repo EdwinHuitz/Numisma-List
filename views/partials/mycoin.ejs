@@ -1,0 +1,8 @@
+<table>
+    <tr>
+        <td>List</td><td>Total Coins</td>
+    </tr>
+    <% lists.forEach(lis => {%>
+        <tr><td><a href="/lists/<%= lis._id %>"><%= lis.listTitle %></a></td><td><%= lis.coins.length %></td></tr><%
+    })%>
+</table>

@@ -16,7 +16,7 @@ function newList(req, res) {
             if (err) {
                 console.log(err)
             }
-            res.redirect(`/users/profile`);
+            res.redirect(`/users`);
             console.log('done saving')
         })
     })

@@ -13,13 +13,18 @@
 
 <h1><%= title %></h1>
 <% if(user){ %><button href="#"
-    onclick="let list = document.getElementById('newlist').style;if(list.visibility==='visible'){list.visibility='hidden'}else{list.visibility='visible'}">New
+    onclick="let list = document.getElementById('newlist').style;if(list.display==='block'){list.display='none'}else{list.display='block'}">New
     List</button>
-<button href="#"
-    onclick="let list = document.getElementById('mylist').style;if(list.visibility==='visible'){list.visibility='hidden'}else{list.visibility='visible'}">My
+    <button href="#"
+    onclick="let list = document.getElementById('mylists').style;if(list.display==='block'){list.display='none'}else{list.display='block'}">My
     Lists</button>
-    <div id="newlist" style="visibility:hidden;"><%- include("../partials/list") %></div>
-    <div id="mylist" style="visibility:hidden;"><%- include("../partials/mylist") %></div><%}%>
-
+    <button href="#"
+    onclick="let coin = document.getElementById('addcoin').style;if(coin.display==='block'){coin.display='none'}else{coin.display='block'}">Add
+    a Coin</button>
+    <div id="newlist" style="display:none;"><%- include("../partials/list") %></div>
+    <div id="mylists" style="display:none;"><%- include("../partials/mylist") %></div>
+    <div id="addcoin" style="display:none;"><%- include("../partials/coin") %></div>
+    <div id="mycoins" style="display:none;"><%- include("../partials/mycoin") %></div>
+<%}%>
 
 <%- include("../partials/footer")%>
