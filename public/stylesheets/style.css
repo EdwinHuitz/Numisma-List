@@ -1,5 +1,6 @@
 body{
   text-align:center;
+  background-color:skyblue;
 }
 .navbar-fixed{
 width:100vw;
@@ -11,8 +12,19 @@ width:100vw;
   width:100vw;
 }
 
-#search-row form {
+#search-row form{
   padding-top: 20px;
   display:flex;
   flex-direction: row;
 }
+table{
+  width:100vw;text-align: center;
+}
+td{
+  border:none;padding:10px;
+}
+.ttop{border-left: solid;border-right:solid}
+.tside{border-top:solid;}
+.tcenter{border:solid;border-bottom:none;}
+.tbottom{border-top:solid;}
+.delbtn{background-color:lightcoral;border:none;border-radius:40%;color:white;}
