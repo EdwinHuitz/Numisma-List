@@ -35,7 +35,7 @@ function createList(req, res) {
         coins = a
     });
     List.findById(req.params.id, function (err, usrlist) {
-        console.log(err);
+        if(err){console.log(err);}
         res.render(`users/lists`, {
             user: req.user ? req.user : null,
             coins,
@@ -55,11 +55,13 @@ function deleteList(req, res) {
 }
 
 function addList(req, res) {
+    console.log('Starting:'+req.body)
     List.findById(req.params.id, function (err, list) {
         if (err) {
             console.log(err)
         }
         list.coins.push(req.body)
+        list.save()
         console.log(req.body)
         res.redirect(`/lists/${req.params.id}`)
     })
