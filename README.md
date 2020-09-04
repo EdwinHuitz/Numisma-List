@@ -1,2 +1,41 @@
-### Numisma-List
-This node.js based application allows users to create and edit their coin collection lists together
+<span style="text-align:center">
+
+# Numisma-List
+
+## Description
+This is a node.js based browser library which can be used to store information about your coin collection.
+
+<hr/>
+
+## Demo
+https://aplaple.herokuapp.com/
+
+<hr/>
+
+## Wireframe
+![Wireframe Example](public/images/wireframe.png)
+
+## Actual usage
+![Screenshot of the actual site](public/images/Screenshot_1.png)
+![Screenshot of anthoer user](public/images/Screenshot_2.png)
+<hr/>
+
+## Technologies Used
+  
+HTML, CSS, mongodb, and node.js
+  
+<hr/>
+</span>
+<span style="text-align:center">
+
+## Credits
+http://getbootstrap.com/
+<hr/>
+
+## Future Enhancements
+<span style="text-align:left;">
+
+* Allowing indiviual users to create their own customized lists
+* Allowing users to collaborate and create/edit lists together
+* Create an API of existing coins to allow for faster additions
+</span>

@@ -26,10 +26,10 @@
     <button href="#"
     onclick="let coin = document.getElementById('mycoins').style;if(coin.display==='block'){coin.display='none'}else{coin.display='block'}"class="navbtn">My Coins</button></div>
     <div style="width:100vw;padding-top: 8vh;">
-    <div id="newlist" style="display:none;"><%- include("../partials/list") %></div>
-    <div id="mylists" style="display:none;"><%- include("../partials/mylist") %></div>
-    <div id="addcoin" style="display:none;"><%- include("../partials/coin") %></div>
-    <div id="mycoins" style="display:none;"><%- include("../partials/mycoin") %></div>
+    <div id="newlist" style="display:none;" class="card"><%- include("../partials/list") %></div>
+    <div id="mylists" style="display:none;" class="card"><%- include("../partials/mylist") %></div>
+    <div id="addcoin" style="display:none;" class="card"><%- include("../partials/coin") %></div>
+    <div id="mycoins" style="display:none;" class="card"><%- include("../partials/mycoin") %></div>
     </div>
 <%}else{%>
     <div class="card">
