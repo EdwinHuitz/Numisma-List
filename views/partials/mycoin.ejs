@@ -12,7 +12,7 @@
         <td class="tside">
             <%if(user._id.toString()===cos.authorId.toString()){ %><form action="/coins/<%=cos._id%>?_method=DELETE" method="POST"><button type="submit" class="delbtn">X</button></form><%}%>
         </td>
-        <td class="tcenter"><%= cos.coinGrade %></td>
+        <td class="tside"><%= cos.coinGrade %></td>
         <td class="tcenter"><%= cos.coinYear %></td>
         <td class="tcenter"><%= cos.coinMint %></td>
         <td class="tcenter"><a href="/coins/<%= cos._id %>"class="alink"><%= cos.coinName %></a></td>
