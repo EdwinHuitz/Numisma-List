@@ -3,6 +3,7 @@ var usersCtrl = require('../controllers/users');
 
 // GET /users
 //user profile
+router.get('/',isLoggedIn,function(req,res){res.redirect(`/users/${req.user._id}`)})
 router.get('/:id',usersCtrl.index);
 
 

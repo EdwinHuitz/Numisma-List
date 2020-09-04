@@ -6,8 +6,10 @@ var coinsCtrl = require('../controllers/coins');
 router.post('/users/:id/lists',isLoggedIn,listsCtrl.new)
 //list page
 router.get('/lists/:id',listsCtrl.create)
-router.post('/lists/:id',coinsCtrl.new)
-router.post('/lists/:id/req',coinsCtrl.req)
+//add a coin
+router.post('/lists/:id',isLoggedIn,coinsCtrl.new)
+//request a coin be added
+router.post('/lists/:id/req',isLoggedIn,coinsCtrl.req)
 
 function isLoggedIn(req,res,next)
 {
