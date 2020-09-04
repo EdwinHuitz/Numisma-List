@@ -23,10 +23,9 @@ function newList(req, res) {
     console.log('end of newlist function')
 }
 
-function createList(res, req) {
-    let user = req.params.id;
-    res.render(`users/${user}/lists`, {
-        user: req.user ? req.user : null,
-        title: 'Add to list'
+function createList(req, res) {
+    List.findById(req.params.id,function(err,usrlist){
+        console.log(err);
+        res.render(`users/lists`, {user: req.user ? req.user : null, usrlist})
     })
 }

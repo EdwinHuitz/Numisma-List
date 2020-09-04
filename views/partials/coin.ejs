@@ -1,21 +1,21 @@
-<form action="/users/<%-user._id%>" method="POST">
+<form action="/users/<%-user._id%>/lists" method="POST">
     <label>Coin Name:
-        <input type="text" required pattern="[A-Za-z0-9\s]{1,}" name="Coin_name">
+        <input type="text" required pattern="[A-Za-z0-9\s]{1,}" name="coinName">
     </label><br>
     <label>Denomination:
-        <input type="text" required pattern="[A-Za-z0-9\s]{1,}" name="Coin_denomination">
+        <input type="text" required pattern="[A-Za-z0-9\s]{1,}" name="coinDenomination">
     </label><br>
     <label>Country of Origin:
-        <input type="text" required pattern="[A-Za-z\s]{1,}" name="Coin_country">
+        <input type="text" required pattern="[A-Za-z\s]{1,}" name="coinCountry">
     </label><br>
     <label>Year:
-        <input type="text" required pattern="[A-Za-z0-9\s]{1,15}" name="Coin_year">
+        <input type="text" required pattern="[A-Za-z0-9\s]{1,15}" name="coinYear">
     </label><br>
     <label>Mint-Mark:
-        <input type="text" required pattern="[A-Za-z]{1,}" name="Coin_mint">
+        <input type="text" required pattern="[A-Za-z]{1,}" name="coinMint">
     </label><br>
     <label>Strike Type:
-        <select name="Coin_strike">
+        <select name="coinStrike">
             <option value="Business" selected>Business</option>
             <option value="Proof">Proof</option>
             <option value="Satin">Satin</option>
@@ -26,19 +26,19 @@
         </select>
     </label><br>
     <label>Composition:<br>
-        <label>Bronze: <input type="checkbox" name="Coin_composition" value="Bronze"></label>
-        <label>Copper: <input type="checkbox" name="Coin_composition" value="Copper"></label>
-        <label>Silver: <input type="checkbox" name="Coin_composition" value="Silver"></label>
-        <label>Gold: <input type="checkbox" name="Coin_composition" value="Gold"></label>
-        <label>Platinum: <input type="checkbox" name="Coin_composition" value="Platinum"></label>
-        <label>Brass: <input type="checkbox" name="Coin_composition" value="Brass"></label>
-        <label>Aluminum: <input type="checkbox" name="Coin_composition" value="Aluminum"></label>
-        <label>Steel: <input type="checkbox" name="Coin_composition" value="Steel"></label>
-        <label>Copper-Nickel: <input type="checkbox" name="Coin_composition" value="Copper-Nickel"></label>
-        <label>Bi-Metalic: <input type="checkbox" name="Coin_composition" value="Bi-Metalic"></label>
+        <label>Bronze: <input type="checkbox" name="coinComposition" value="Bronze"></label>
+        <label>Copper: <input type="checkbox" name="coinComposition" value="Copper"></label>
+        <label>Silver: <input type="checkbox" name="coinComposition" value="Silver"></label>
+        <label>Gold: <input type="checkbox" name="coinComposition" value="Gold"></label>
+        <label>Platinum: <input type="checkbox" name="coinComposition" value="Platinum"></label>
+        <label>Brass: <input type="checkbox" name="coinComposition" value="Brass"></label>
+        <label>Aluminum: <input type="checkbox" name="coinComposition" value="Aluminum"></label>
+        <label>Steel: <input type="checkbox" name="coinComposition" value="Steel"></label>
+        <label>Copper-Nickel: <input type="checkbox" name="coinComposition" value="Copper-Nickel"></label>
+        <label>Bi-Metalic: <input type="checkbox" name="coinComposition" value="Bi-Metalic"></label>
     </label><br>
     <label>Grade:
-        <select name="Coin_grade">
+        <select name="coinGrade">
             <option value="Ungraded" selected>Ungraded</option>
             <option value="PR">Poor(1)</option>
             <option value="FA">Fair(2)</option>

@@ -1,6 +1,6 @@
 <form action="/users/<%=user._id%>/lists" method="POST">
     <label>Coin Type:
-    <select name="Coin_type">
+    <select name="coinType">
         <option value="Coin">Coin</option>
         <option value="Medal">Medal</option>
         <option value="Token" selected>Token</option>
@@ -9,7 +9,7 @@
         </select>
     </label><br>
     <label>Collection Category:
-        <select name="Coin_category">
+        <select name="coinCategory">
         <option value="USA" selected>USA</option>
         <option value="World Coins">World</option>
         <option value="Ancient Coins">Ancient</option>
@@ -18,7 +18,7 @@
         </select>
 </label><br>
 <label>Collection Title:
-    <input type="text" required pattern="[A-Za-z0-9\s]{1,}" name="List_title">
+    <input type="text" required pattern="[A-Za-z0-9\s]{1,}" name="listTitle">
 </label><br>
     <button type="submit" id="sub">Submit</button>
 </form>
