@@ -1,8 +1,21 @@
 <table>
     <tr>
-        <td>Grade</td><td>Year</td><td>Mint-Mark</td><td>Coin Name</td><td>Country of Origin</td>
+        <td>Grade</td>
+        <td>Year</td>
+        <td>Mint-Mark</td>
+        <td>Coin Name</td>
+        <td>Country of Origin</td>
     </tr>
     <% coins.forEach(cos => {%>
-        <tr><td><%= cos.coinGrade %></td><td><%= cos.coinYear %></td><td><%= cos.coinMint %></td><td><a href="/coins/<%= cos._id %>"><%= cos.coinName %></a></td><td><%= cos.coinCountry %></td></tr><%
+    <tr>
+        <td>
+            <form action="/coins/<%=cos._id%>?_method=DELETE" method="POST"><button type="submit">X</button></form>
+        </td>
+        <td><%= cos.coinGrade %></td>
+        <td><%= cos.coinYear %></td>
+        <td><%= cos.coinMint %></td>
+        <td><a href="/coins/<%= cos._id %>"><%= cos.coinName %></a></td>
+        <td><%= cos.coinCountry %></td>
+    </tr><%
     })%>
 </table>

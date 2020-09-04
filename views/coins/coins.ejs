@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%=usrcoin.coinName%></title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+</head>
+<%- include("../partials/header") %>
+<table>
+    <tr>
+        <td>Grade</td>
+        <td>Year</td>
+        <td>Mint-Mark</td>
+        <td>Coin Name</td>
+        <td>Country of Origin</td>
+    </tr>
+    <tr>
+        <td><%= usrcoin.coinGrade %></td>
+        <td><%= usrcoin.coinYear %></td>
+        <td><%= usrcoin.coinMint %></td>
+        <td><%= usrcoin.coinName %></td>
+        <td><%= usrcoin.coinCountry %></td>
+    </tr>
+</table>
+<%- include("../partials/footer")%>

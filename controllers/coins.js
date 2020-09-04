@@ -2,7 +2,7 @@ const User = require('../models/user');
 const Coin = require('../models/coin')
 
 module.exports = {
-    new: newCoin,req:requestCoin
+    new:newCoin,req:requestCoin,create:createCoin
 };
 
 function newCoin(req, res) {
@@ -37,4 +37,12 @@ function requestCoin(req,res){
     //     })
     // })
     console.log('end of requestcoin function')
+}
+function createCoin(req, res) {
+    console.log('start of coin page');
+    Coin.findById(req.params.id,function(err,usrcoin){
+        console.log(err);
+        res.render(`coins/coins`, {user: req.user ? req.user : null, usrcoin})
+    })
+    console.log('end of coin page');
 }
