@@ -2,7 +2,7 @@ const User = require('../models/user');
 const Coin = require('../models/coin')
 
 module.exports = {
-    new: newCoin
+    new: newCoin,req:requestCoin
 };
 
 function newCoin(req, res) {
@@ -21,3 +21,4 @@ function newCoin(req, res) {
     })
     console.log('end of newcoin function')
 }
+function requestCoin(){}

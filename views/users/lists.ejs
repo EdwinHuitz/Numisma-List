@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,15 @@
 </head>
 <%- include("../partials/header") %>
 
-<% if(user){ %><button href="#"
-    onclick="let coin = document.getElementById('addcoin').style;if(coin.visibility==='visible'){coin.visibility='hidden'}else{coin.visibility='visible'}">Add a Coin</button>
-    <div id="addcoin" style="visibility:hidden;"><%- include("../partials/coin") %></div><%}%>
+<% if(user){ if(user._id.toString !=== usrlist.authorId.toString){%>
+<button href="#"
+    onclick="let coin = document.getElementById('addcoin').style;if(coin.visibility==='visible'){coin.visibility='hidden'}else{coin.visibility='visible'}">Add
+    a Coin</button>
+<div id="addcoin" style="visibility:hidden;"><%- include("../partials/coin") %></div>
+<% }else{ %>
+    <button href="#"
+    onclick="let coin = document.getElementById('reqaddcoin').style;if(coin.visibility==='visible'){coin.visibility='hidden'}else{coin.visibility='visible'}">Request to Add a Coin</button>
+<div id="reqaddcoin" style="visibility:hidden;"><%- include("../partials/reqcoin") %></div>
+<% }} %>
 
 <%- include("../partials/footer")%>

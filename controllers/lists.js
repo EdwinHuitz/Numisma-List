@@ -10,7 +10,7 @@ function newList(req, res) {
     console.log('start of newlist function');
     console.log(req.body);
     User.findById(req.params.id, function (err, usr) {
-        req.body.Author_ID = usr._id;
+        req.body.authorId = usr._id;
         const list = new List(req.body);
         list.save(function (err) {
             if (err) {
