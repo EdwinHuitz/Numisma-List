@@ -2,6 +2,7 @@ const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
 
 const coinSchema=new Schema({
+    authorId:{type:Schema.Types.ObjectId,ref:'User'},
     coinName:{type:String,default:'Unknown'},
     coinDenomination:{type:String,default:'Unknown'},
     coinCountry:{type:String,default:'Unknown'},

@@ -8,6 +8,7 @@ module.exports = {
 function newCoin(req, res) {
     console.log('start of newcoin function');
     User.findById(req.params.id, function (err, usr) {
+        req.body.authorId = usr._id;
         if(req.body.coinCountry==null){req.body.coinCountry="USA"}
         console.log(req.body);
         const coin = new Coin(req.body);

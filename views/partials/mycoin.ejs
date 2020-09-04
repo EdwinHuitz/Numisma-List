@@ -1,8 +1,8 @@
 <table>
     <tr>
-        <td>List</td><td>Total Coins</td>
+        <td>Grade</td><td>Year</td><td>Mint-Mark</td><td>Coin Name</td><td>Country of Origin</td>
     </tr>
-    <% lists.forEach(lis => {%>
-        <tr><td><a href="/lists/<%= lis._id %>"><%= lis.listTitle %></a></td><td><%= lis.coins.length %></td></tr><%
+    <% coins.forEach(cos => {%>
+        <tr><td><%= cos.coinGrade %></td><td><%= cos.coinYear %></td><td><%= cos.coinMint %></td><td><a href="/coins/<%= cos._id %>"><%= cos.coinName %></a></td><td><%= cos.coinCountry %></td></tr><%
     })%>
 </table>
