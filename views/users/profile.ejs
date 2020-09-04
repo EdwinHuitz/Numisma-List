@@ -12,7 +12,7 @@
 
 
 <h1><%= title %></h1>
-<% if(user){ %><button href="#"
+<% if(user._id.toString()===orig._id.toString()){ %><button href="#"
     onclick="let list = document.getElementById('newlist').style;if(list.display==='block'){list.display='none'}else{list.display='block'}">New
     List</button>
     <button href="#"
@@ -27,6 +27,9 @@
     <div id="mylists" style="display:none;"><%- include("../partials/mylist") %></div>
     <div id="addcoin" style="display:none;"><%- include("../partials/coin") %></div>
     <div id="mycoins" style="display:none;"><%- include("../partials/mycoin") %></div>
+<%}else{%>
+    <div id="mylists" style="display:block;"><%- include("../partials/mylist") %></div>
+    <div id="mycoins" style="display:block;"><%- include("../partials/mycoin") %></div>
 <%}%>
 
 <%- include("../partials/footer")%>

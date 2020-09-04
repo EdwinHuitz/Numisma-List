@@ -1,8 +1,18 @@
 <table>
     <tr>
-        <td>List</td><td>Total Coins</td>
+        <td></td>
+        <td>List</td>
+        <td>Total Coins</td>
     </tr>
-    <% lists.forEach(lis => {%>
-        <tr><td><a href="/lists/<%= lis._id %>"><%= lis.listTitle %></a></td><td><%= lis.coins.length %></td></tr><%
-    })%>
+    <% if(lists!=undefined){lists.forEach(lis => {%>
+    <tr>
+        <td>
+            <%if(user._id.toString()===lis.authorId.toString()){ %><form action="/lists/<%=lis._id%>?_method=DELETE" method="POST"><button type="submit">X</button></form><%}%>
+        </td>
+        <td><a href="/lists/<%= lis._id %>"><%= lis.listTitle %></a></td>
+        <td><%= lis.coins.length %></td>
+    </tr><%
+    })}else{%><tr>
+        <td colspan="2"><b>None</b></td>
+    </tr><%}%>
 </table>

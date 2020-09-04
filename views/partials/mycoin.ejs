@@ -1,15 +1,16 @@
 <table>
     <tr>
+        <td></td>
         <td>Grade</td>
         <td>Year</td>
         <td>Mint-Mark</td>
         <td>Coin Name</td>
         <td>Country of Origin</td>
     </tr>
-    <% coins.forEach(cos => {%>
+    <% if(coins!=undefined){coins.forEach(cos => {%>
     <tr>
         <td>
-            <form action="/coins/<%=cos._id%>?_method=DELETE" method="POST"><button type="submit">X</button></form>
+            <%if(user._id.toString()===cos.authorId.toString()){ %><form action="/coins/<%=cos._id%>?_method=DELETE" method="POST"><button type="submit">X</button></form><%}%>
         </td>
         <td><%= cos.coinGrade %></td>
         <td><%= cos.coinYear %></td>
@@ -17,5 +18,5 @@
         <td><a href="/coins/<%= cos._id %>"><%= cos.coinName %></a></td>
         <td><%= cos.coinCountry %></td>
     </tr><%
-    })%>
+    })}else{%><tr><td colspan="6"><b>None</b></td></tr><%}%>
 </table>

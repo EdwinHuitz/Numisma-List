@@ -2,14 +2,19 @@ const User = require('../models/user');
 const Coin = require('../models/coin')
 
 module.exports = {
-    new:newCoin,req:requestCoin,create:createCoin
+    new: newCoin,
+    req: requestCoin,
+    create: createCoin,
+    del: deleteCoin
 };
 
 function newCoin(req, res) {
     console.log('start of newcoin function');
     User.findById(req.params.id, function (err, usr) {
         req.body.authorId = usr._id;
-        if(req.body.coinCountry==null){req.body.coinCountry="USA"}
+        if (req.body.coinCountry == null) {
+            req.body.coinCountry = "USA"
+        }
         console.log(req.body);
         const coin = new Coin(req.body);
         coin.save(function (err) {
@@ -22,7 +27,8 @@ function newCoin(req, res) {
     })
     console.log('end of newcoin function')
 }
-function requestCoin(req,res){
+
+function requestCoin(req, res) {
     console.log('start of requestcoin function');
     console.log(req.body);
     // User.findById(req.params.id, function (err, usr) {
@@ -38,11 +44,23 @@ function requestCoin(req,res){
     // })
     console.log('end of requestcoin function')
 }
+
 function createCoin(req, res) {
     console.log('start of coin page');
-    Coin.findById(req.params.id,function(err,usrcoin){
-        console.log(err);
-        res.render(`coins/coins`, {user: req.user ? req.user : null, usrcoin})
+    Coin.findById(req.params.id, function (err, usrcoin) {
+        if(err){console.log(err)}
+        res.render(`coins/coins`, {
+            user: req.user ? req.user : null,
+            usrcoin
+        })
     })
     console.log('end of coin page');
+}
+
+function deleteCoin(req, res) {
+    Coin.findByIdAndDelete(req.params.id, function (err,a) {
+        if(err){console.log(err)}
+        res.redirect('/users')
+        console.log('done')
+    })
 }

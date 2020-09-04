@@ -4,7 +4,7 @@ var coinsCtrl = require('../controllers/coins');
 //coin page
 router.get('/coins/:id', coinsCtrl.create)
 //delete a coin
-//router.delete('/coins/:id',isLoggedIn,coinsCtrl.new)
+router.delete('/coins/:id',isLoggedIn,coinsCtrl.del)
 
 function isLoggedIn(req,res,next)
 {

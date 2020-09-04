@@ -1,0 +1,10 @@
+<form action="/lists/<%=usrlist._id%>?_method=PUT" method="POST">
+    <label>My Coins:
+    <select name="coins">
+        <% if(coins!=undefined){coins.forEach(co => {%>
+        <option value="<%=co._id%>"><%=co.coinName%></option>    
+        <%});} %>
+        </select>
+    </label><br>
+    <button type="submit" id="sub">Submit</button>
+</form>

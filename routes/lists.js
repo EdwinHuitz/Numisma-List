@@ -6,10 +6,13 @@ var coinsCtrl = require('../controllers/coins');
 router.post('/users/:id/lists',isLoggedIn,listsCtrl.new)
 //list page
 router.get('/lists/:id',listsCtrl.create)
+//delete the list
+router.delete('/lists/:id',isLoggedIn,listsCtrl.del)
 //add a coin
-// router.post('/lists/:id',isLoggedIn,coinsCtrl.new)
-// //request a coin be added
-// router.post('/lists/:id/req',isLoggedIn,coinsCtrl.req)
+router.put('/lists/:id',isLoggedIn,listsCtrl.add)
+//request a coin be added
+router.post('/lists/:id/req',isLoggedIn,coinsCtrl.req)
+
 
 function isLoggedIn(req,res,next)
 {

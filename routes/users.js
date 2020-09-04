@@ -6,7 +6,7 @@ var coinsCtrl = require('../controllers/coins');
 router.get('/',isLoggedIn,function(req,res){res.redirect(`/users/${req.user._id}`)})
 //add a coin
 router.post('/:id',isLoggedIn,coinsCtrl.new)
-router.get('/:id',usersCtrl.index);
+router.get('/:id',isLoggedIn,usersCtrl.index);
 
 function isLoggedIn(req,res,next)
 {

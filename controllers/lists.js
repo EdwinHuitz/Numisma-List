@@ -1,9 +1,13 @@
 const User = require('../models/user');
-const List = require('../models/list')
+const List = require('../models/list');
+const Coin = require('../models/coin')
 
 module.exports = {
     new: newList,
-    create: createList
+    create: createList,
+    del: deleteList,
+    add: addList,
+    req: reqList
 };
 
 function newList(req, res) {
@@ -24,8 +28,41 @@ function newList(req, res) {
 }
 
 function createList(req, res) {
-    List.findById(req.params.id,function(err,usrlist){
+    let coins;
+    Coin.find({
+        authorId: req.user._id
+    }, (err, a) => {
+        coins = a
+    });
+    List.findById(req.params.id, function (err, usrlist) {
         console.log(err);
-        res.render(`users/lists`, {user: req.user ? req.user : null, usrlist})
+        res.render(`users/lists`, {
+            user: req.user ? req.user : null,
+            coins,
+            usrlist
+        })
     })
 }
+
+function deleteList(req, res) {
+    List.findByIdAndDelete(req.params.id, function (err, a) {
+        if (err) {
+            console.log(err)
+        }
+        res.redirect('/users')
+        console.log('done')
+    })
+}
+
+function addList(req, res) {
+    List.findById(req.params.id, function (err, list) {
+        if (err) {
+            console.log(err)
+        }
+        list.coins.push(req.body)
+        console.log(req.body)
+        res.redirect(`/lists/${req.params.id}`)
+    })
+}
+
+function reqList(req, res) {}

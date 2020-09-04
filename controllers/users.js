@@ -9,12 +9,13 @@ function index(req, res)
 {
   User.findById(req.params.id,
     function(err,usr){
+      if(err){console.log(err)}
       let coins;
       Coin.find({authorId:usr._id},(err,a)=>{coins=a});
       //console.log(coins);
       List.find({authorId:usr},function(err,lists){
         //console.log(lists)
-        res.render('users/profile', { user:req.user?req.user:null, coins, lists, title:req.user.name})
+        res.render('users/profile', { user:req.user?req.user:null, orig:usr, coins, lists, title:usr.name})
       })
     })
 }
