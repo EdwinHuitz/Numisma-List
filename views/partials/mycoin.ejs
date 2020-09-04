@@ -15,7 +15,7 @@
         <td class="tcenter"><%= cos.coinGrade %></td>
         <td class="tcenter"><%= cos.coinYear %></td>
         <td class="tcenter"><%= cos.coinMint %></td>
-        <td class="tcenter"><a href="/coins/<%= cos._id %>"><%= cos.coinName %></a></td>
+        <td class="tcenter"><a href="/coins/<%= cos._id %>"class="alink"><%= cos.coinName %></a></td>
         <td class="tside"><%= cos.coinCountry %></td>
     </tr><%
     })}else{%><tr><td colspan="6"><b>None</b></td></tr><%}%>

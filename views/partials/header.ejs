@@ -1,13 +1,13 @@
 <body>
   <div class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper">
-        <a href="" class="brand-logo left">Numisma-List</a>
+      <div class="nav-wrapper" style="">
+        <a href="" class="navbtn left">Numisma-List</a><b style="color:white!important;">|</b>
           <% if (user) { %>
-            <a href="/users">My Profile</a>
-            <a href="/auth/logout">Log Out</a>
+            <a href="/users" class="navbtn">My Profile</a><b style="color:white!important;">|</b>
+            <a href="/auth/logout" class="navbtn">Log Out</a>
           <% } else { %>
-            <a href="/auth/google" class="nav-right">Log In using Google</a>
+            <a href="/auth/google" class="navbtn nav-right">Log In using Google</a>
           <% } %>
         </ul>
       </div>

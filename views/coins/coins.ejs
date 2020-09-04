@@ -8,55 +8,56 @@
     <link rel="stylesheet" href="../stylesheets/style.css" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <%- include("../partials/header") %>
-<table style="margin-top: 10%;">
+<div class="card">
+<table>
     <tr>
         <td>Grade</td>
-        <td>Year</td>
-        <td>Mint-Mark</td>
-        <td>Coin Name</td>
+        <td class="ttop">Year</td>
+        <td class="ttop">Mint-Mark</td>
+        <td class="ttop">Coin Name</td>
         <td>Country of Origin</td>
     </tr>
     <%if(user!=null && user._id.toString()===usrcoin.authorId.toString()){ %>
         <tr><form action="/coins/<%=usrcoin._id%>?_method=PUT" method="POST">
-        <td><input name="coinGrade" value="<%= usrcoin.coinGrade %>"></td>
-        <td><input name="coinYear" value="<%= usrcoin.coinYear %>"></td>
-        <td><input name="coinMint" value="<%= usrcoin.coinMint %>"></td>
-        <td><input name="coinName" value="<%= usrcoin.coinName %>"></td>
-        <td><input name="coinCountry" value="<%= usrcoin.coinCountry %>"></td>
+        <td class="tside"><input name="coinGrade" value="<%= usrcoin.coinGrade %>"></td>
+        <td class="tcenter"><input name="coinYear" value="<%= usrcoin.coinYear %>"></td>
+        <td class="tcenter"><input name="coinMint" value="<%= usrcoin.coinMint %>"></td>
+        <td class="tcenter"><input name="coinName" value="<%= usrcoin.coinName %>"></td>
+        <td class="tside"><input name="coinCountry" value="<%= usrcoin.coinCountry %>"></td>
         </tr>
         <tr>
-            <td>Denomination</td>
-            <td>Strike-Type</td>
-            <td>Coin Errors</td>
-            <td colspan="2">Composition</td>
+            <td class="tside">Denomination</td>
+            <td class="tcenter">Strike-Type</td>
+            <td class="tcenter">Coin Errors</td>
+            <td colspan="2" class="tside">Composition</td>
         </tr>
         <tr>
-            <td><input name="coinDenomination" value="<%= usrcoin.coinDenomination %>"></td>
-            <td><input name="coinStrike" value="<%= usrcoin.coinStrike %>"></td>
-            <td><input name="coinError" value="<%= usrcoin.coinError %>"></td>
-            <td colspan="2"><input name="coinComposition" value="<%= usrcoin.coinComposition %>"></td>
+            <td class="tside"><input name="coinDenomination" value="<%= usrcoin.coinDenomination %>"></td>
+            <td class="tcenter"><input name="coinStrike" value="<%= usrcoin.coinStrike %>"></td>
+            <td class="tcenter"><input name="coinError" value="<%= usrcoin.coinError %>"></td>
+            <td colspan="2" class="tside"><input name="coinComposition" value="<%= usrcoin.coinComposition %>"></td>
         </tr>
         <tr><td colspan="5"><button type="submit" id="sub">Submit</button></td></tr>
         </form><%}else{%>
         <tr>
-        <td></td>
-        <td><%= usrcoin.coinGrade %></td>
-        <td><%= usrcoin.coinYear %></td>
-        <td><%= usrcoin.coinMint %></td>
-        <td><%= usrcoin.coinName %></td>
-        <td><%= usrcoin.coinCountry %></td>
+        <td class="tside"><%= usrcoin.coinGrade %></td>
+        <td class="tcenter"><%= usrcoin.coinYear %></td>
+        <td class="tcenter"><%= usrcoin.coinMint %></td>
+        <td class="tcenter"><%= usrcoin.coinName %></td>
+        <td class="tside"><%= usrcoin.coinCountry %></td>
         </tr>
         <tr>
-            <td>Denomination</td>
-            <td>Strike-Type</td>
-            <td>Coin Errors</td>
-            <td colspan="2">Composition</td>
+            <td class="tside">Denomination</td>
+            <td class="tcenter">Strike-Type</td>
+            <td class="tcenter">Coin Errors</td>
+            <td colspan="2" class="tside">Composition</td>
         </tr>
         <tr>
-        <td><%= usrcoin.coinDenomination %></td>
-        <td><%= usrcoin.coinStrike %></td>
-        <td><%= usrcoin.coinError %></td>
-        <td><%= usrcoin.coinComposition %></td>
+        <td class="tside"><%= usrcoin.coinDenomination %></td>
+        <td class="tcenter"><%= usrcoin.coinStrike %></td>
+        <td class="tcenter"><%= usrcoin.coinError %></td>
+        <td colspan="2" class="tside"><%= usrcoin.coinComposition %></td>
     </tr><%}%>
 </table>
+</div>
 <%- include("../partials/footer")%>
