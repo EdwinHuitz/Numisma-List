@@ -12,6 +12,9 @@ https://aplaple.herokuapp.com/
 
 <hr/>
 
+## Trello Board
+https://trello.com/b/4pMVnAc2/numisma-list
+
 ## Wireframe
 ![Wireframe Example](public/images/wireframe.png)
 
@@ -22,7 +25,7 @@ https://aplaple.herokuapp.com/
 
 ## Technologies Used
   
-HTML, CSS, mongodb, and node.js
+HTML, CSS, Javascript, ejs, node.js, express, mongodb, mongoose, Google oAuth 2.0, nodemon
   
 <hr/>
 </span>
